@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
   });
 
 // Route "/app"
-app.get('/app', (req, res) => {
+router.get('/app', (req, res) => {
     console.log('Bonjour depuis la route exposée dans URL');
   
     const contentPath = 'components/empty.component.ejs';

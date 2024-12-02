@@ -35,13 +35,11 @@ app.get('/app', (req, res) => {
   res.render('landing.view.ejs', { content: contentPath, talkbox: talkboxPath });
 });
 
-
 app.get('/json-message', (req, res) => {
   const filePath = path.join(__dirname, 'data', 'message.json'); // Chemin du fichier JSON
     const jsonData = JSON.parse(data); // Convertir le fichier en objet JSON
     res.json(jsonData); // Envoyer la réponse JSON
 });
-timestamp: new Date().toISOString(),
 
 // Route hello
 app.get('/hello', (req, res) => {
@@ -73,7 +71,6 @@ app.get('/shutdown', (req, res) => {
     console.log('Serveur arrêté');
   });
 });
-
 
 // Routes + Utilisation 
 const appRoutes = require('./routes/app.routes.js'); app.use('/', appRoutes); //Renvois client web et composants
