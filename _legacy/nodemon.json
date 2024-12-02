@@ -1,0 +1,7 @@
+{
+    "watch": ["app", "public"],
+    "ext": "ts, scss",
+    "ignore": ["node_modules"],
+    "exec": "ts-node ./index.ts"
+  }
+  
