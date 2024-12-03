@@ -12,16 +12,7 @@
 <p id="result"></p>
 
 <script>
-  
-  document.getElementById('calculator-form').addEventListener('submit', async (event) => { // Soumettre opération
-    event.preventDefault();
 
-    const a = document.getElementById('numA').value; 
-    const b = document.getElementById('numB').value;
-    const operation = document.getElementById('operation').value;
 
-    const response = await fetch(`/api/calculate?a=${a}&b=${b}&operation=${operation}`);
-    const result = await response.text();
-    document.getElementById('result').innerText = result;
-  });
+
 </script>
