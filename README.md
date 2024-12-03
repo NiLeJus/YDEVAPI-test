@@ -1,15 +1,8 @@
 #Lancer l'application => cmd npm start
 
+Stack tech : 
 
-npm run build
-
-
-
-Pour démarrer en mode développement avec Hot Reload :
-npm run dev
-
-
-Express
-Node
-Nodemon
-Ejs
+Node => env de dev et éxé
+Express => framework backend
+Nodemon => hot reload
+Ejs => lib for w

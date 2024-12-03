@@ -1,0 +1,47 @@
+
+<div id="this-component" class="card" style="width: 25rem;">
+  <button id="btn-close" type="button" class="btn-close" aria-label="Close"></button>
+<form id="calculator-form">
+  <input type="number" id="numA" name="a" placeholder="Nombre A" required>
+  <select id="operation" name="operation" required>
+    <option value="add">Addition</option>
+    <option value="subtract">Soustraction</option>
+    <option value="multiply">Multiplication</option>
+    <option value="divide">Division</option>
+  </select>
+  <input type="number" id="numB" name="b" placeholder="Nombre B" required>
+  <button type="submit" class="btn btn-primary">Calculer</button>
+</form>
+<p id="result"></p>
+</div>
+
+<script>
+  document.getElementById('calculator-form').addEventListener('submit', async (event) => {
+    event.preventDefault(); // Empêche le rechargement de la page
+
+    // Récupération des valeurs des champs
+    const a = document.getElementById('numA').value;
+    const b = document.getElementById('numB').value;
+    const operation = document.getElementById('operation').value;
+
+    try {
+      const response = await fetch(`/api/calculate-by-url?a=${encodeURIComponent(a)}&b=${encodeURIComponent(b)}&operation=${encodeURIComponent(operation)}`);
+
+      if (!response.ok) {
+        throw new Error(`Erreur HTTP : ${response.status}`);
+      }
+
+      // Récupération du résultat
+      const result = await response.text();
+      document.getElementById('result').innerText = `Résultat: ${result}`;
+    } catch (error) {
+      document.getElementById('result').innerText = `Erreur: ${error.message}`;
+      console.error('Erreur lors de la requête:', error);
+    }
+  });
+   
+  document.getElementById('btn-close').addEventListener('click', () => {
+     document.getElementById("this-component").remove();
+    });
+  
+</script>

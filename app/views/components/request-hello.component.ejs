@@ -1,0 +1,23 @@
+
+
+<div id="this-component" class="card" style="width: 25rem;">
+    <button id="btn-close" type="button" class="btn-close" aria-label="Close"></button>
+    
+
+    <div class="card-body">
+    <p>Bonjour !</p>
+
+    </div>
+  </div>
+
+ 
+
+  <script>
+ 
+    document.getElementById('btn-close').addEventListener('click', () => {
+     document.getElementById("this-component").remove();
+    });
+  
+ 
+   </script>
+   

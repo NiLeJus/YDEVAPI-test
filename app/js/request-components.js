@@ -25,6 +25,7 @@ export function handleFetchResponse(response) {
 }
 
 /** Rend un composant dans un conteneur spécifique et exécute ses scripts
+ * !Utiliser objet src script providé par ejs à la place
  * @param {string} html - Contenu HTML à rendre
  * @param {string} outletID - ID du conteneur
  */
